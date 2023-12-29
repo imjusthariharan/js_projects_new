@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="styles.css">
+ <title>Review Slider</title>
+</head>
+<body>
+ <section class="slider">
+    <article class="slide">
+      <img src="person1.jpg" alt="Person 1" class="person-pic">
+      <h2 class="person-name">John Doe</h2>
+      <p class="person-job">Web Developer</p>
+      <p class="review-content">This is an excellent review slider. I really like it.</p>
+    </article>
+    <article class="slide">
+      <img src="person2.jpg" alt="Person 2" class="person-pic">
+      <h2 class="person-name">Jane Smith</h2>
+      <p class="person-job">Web Designer</p>
+      <p class="review-content">I highly recommend using this review slider for your website.</p>
+    </article>
+ </section>
+</body>
+</html>
