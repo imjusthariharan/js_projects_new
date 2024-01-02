@@ -4,16 +4,38 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  font-size: 13px;
  }
  
  .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 100px auto ;
   padding: 2rem;
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
  }
  
+#author {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 900;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+} 
+
+#job, #info {
+  margin: 0;
+  padding: 0;
+  line-height: 22px;
+}
+ 
+
+article {
+  text-align: center;
+}
+
  /* Title styles */
  .title {
   text-align: center;
@@ -21,7 +43,8 @@ body {
     text-align: center;
     margin: 0 0 50px 0;
     text-transform: uppercase;
-    letter-spacing: 19px;
+      text-transform: uppercase;
+
 
  }
  
@@ -29,6 +52,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: #333333;
+  text-transform: uppercase;
  }
  
  .underline {
@@ -39,29 +63,56 @@ body {
  }
  
  /* Button styles */
- .btn {
+button {
   display: inline-block;
   text-align: center;
-  background-color: #007BFF;
+  background-color: #002aff;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   text-decoration: none;
-  border-radius: 5px;
   margin-top: 1.5rem;
   transition: background-color 0.3s;
+  border: 0;
  }
  
- .btn:hover {
-  background-color: #0056b3;
+ button:hover {
+  background-color: #ff0040;
  }
  
  /* Paragraph styles */
- .content p {
+p {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   color: #777777;
  }
 
 
- .img-container img {width: 100%;max-width: 100%;overflow: hidden;max-height: 500px;}
+ .img-container img {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 500px;
+  max-width: 500px;
+  padding: 0 0 20px 0;
+}
+
+.prev-btn {
+  float: left;
+}
+.next-btn {
+  float: right;
+}
+
+.random-btn {
+  background-color: #ff0040;
+}
+
+.button-container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+   left: 0;
+
+}
+

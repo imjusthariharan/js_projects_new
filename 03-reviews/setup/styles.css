@@ -231,6 +231,9 @@ main {
 }
 #author {
   margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  border:1px solid #ccc;
+
 }
 #job {
   margin-bottom: 0.5rem;
