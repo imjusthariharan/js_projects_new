@@ -5,21 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Custom Countdown Timer</title>
-
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
 
-
-
     <div class="container-fluid text-center">
 
-        <h1 class="text-center">Countdown Generator </h1>
-        <p id="demo">Loading</p>
+        <div class="cont_box">
+            <h1 class="text-center">Countdown Checker </h1>
+            <br>
+            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+            <br>
+            <br>
+            <p id="demo">Pick Date Please!</p>
 
+        </div>
     </div>
 
 </body>
@@ -28,10 +30,20 @@
 
 
 <script>
-    var today, deadline, betweenPeriod, days, hours, mins, seconds, intervalSet;
-    deadline = new Date("Jan 10, 2024 15:37:25");
 
-    intervalSet = setInterval(function () {
+    var today, deadline, betweenPeriod, days, hours, mins, seconds, intervalSet;
+
+    const count = document.getElementById("demo");
+    const cont_box = document.getElementsByClassName("cont_box");
+    const body = document.getElementsByTagName("body");
+    const dtime_pick = document.getElementById("birthdaytime");
+ dtime_pick.addEventListener("input", function () {
+        deadline = new Date(dtime_pick.value);
+        intervalSet = setInterval(calculateTime, 1000);
+
+    });
+  function calculateTime() {
+
         today = new Date();
         betweenPeriod = deadline.getTime() - today.getTime();
         /**** countodwn calculations ****/
@@ -39,9 +51,21 @@
         hours = Math.floor((betweenPeriod % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         mins = Math.floor((betweenPeriod % (1000 * 60 * 60)) / (1000 * 60));
         seconds = Math.floor((betweenPeriod % (1000 * 60)) / (1000));
-        document.getElementById("demo").innerHTML = days + "D " + hours + "H " + mins + "M " + seconds + "S";
-    }, 1000);
+        if (betweenPeriod > 0) {
+            count.innerHTML = days + "Days " + hours + "Hours " + mins + "Minutes " + seconds + "Seconds";
+        } else {
 
-
+            clearInterval(intervalSet);
+            count.innerHTML = "Expired";
+        }
+    }
+/***** js styles *****/
+    count.style.fontSize = "26px";
+    count.style.fontWeight = 900;
+    count.style.color, cont_box[0].style.color = "#fff";
+    cont_box[0].style.padding = "90px 0px 0px 0px";
+    body[0].style.background = "#000";
+    dtime_pick.style.fontSize = "14px";
+    dtime_pick.style.padding = "10px";
 
 </script>
